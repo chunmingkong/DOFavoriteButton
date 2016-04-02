@@ -380,7 +380,7 @@ public class DOFavoriteButton: UIButton {
         }
     }
 
-    public func addAnmations() {
+    public func addAnimations() {
         circleShape.addAnimation(circleTransform, forKey: "transform")
         circleMask.addAnimation(circleMaskTransform, forKey: "transform")
         imageShape.addAnimation(imageTransform, forKey: "transform")
