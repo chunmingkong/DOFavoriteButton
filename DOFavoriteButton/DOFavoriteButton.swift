@@ -52,12 +52,12 @@ public class DOFavoriteButton: UIButton {
         }
     }
 
-    private let circleTransform = CAKeyframeAnimation(keyPath: "transform")
-    private let circleMaskTransform = CAKeyframeAnimation(keyPath: "transform")
-    private let lineStrokeStart = CAKeyframeAnimation(keyPath: "strokeStart")
-    private let lineStrokeEnd = CAKeyframeAnimation(keyPath: "strokeEnd")
-    private let lineOpacity = CAKeyframeAnimation(keyPath: "opacity")
-    private let imageTransform = CAKeyframeAnimation(keyPath: "transform")
+    public let circleTransform = CAKeyframeAnimation(keyPath: "transform")
+    public let circleMaskTransform = CAKeyframeAnimation(keyPath: "transform")
+    public let lineStrokeStart = CAKeyframeAnimation(keyPath: "strokeStart")
+    public let lineStrokeEnd = CAKeyframeAnimation(keyPath: "strokeEnd")
+    public let lineOpacity = CAKeyframeAnimation(keyPath: "opacity")
+    public let imageTransform = CAKeyframeAnimation(keyPath: "transform")
 
     @IBInspectable public var duration: Double = 1.0 {
         didSet {
