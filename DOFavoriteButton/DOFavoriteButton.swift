@@ -14,7 +14,7 @@ import UIKit
 @IBDesignable
 public class DOFavoriteButton: UIButton {
 
-    private var imageShape: CAShapeLayer!
+    public var imageShape: CAShapeLayer!
     @IBInspectable public var image: UIImage! {
         didSet {
             createLayers(image: image)
@@ -35,8 +35,8 @@ public class DOFavoriteButton: UIButton {
         }
     }
 
-    private var circleShape: CAShapeLayer!
-    private var circleMask: CAShapeLayer!
+    public var circleShape: CAShapeLayer!
+    public var circleMask: CAShapeLayer!
     @IBInspectable public var circleColor: UIColor! = UIColor(red: 255/255, green: 172/255, blue: 51/255, alpha: 1.0) {
         didSet {
             circleShape.fillColor = circleColor.CGColor
