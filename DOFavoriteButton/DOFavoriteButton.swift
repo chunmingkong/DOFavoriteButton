@@ -103,7 +103,7 @@ public class DOFavoriteButton: UIButton {
         addTargets()
     }
 
-    private func createLayers(image image: UIImage!) {
+    public func createLayers(image image: UIImage!) {
         self.layer.sublayers = nil
 
         let imageFrame = CGRect(x: frame.size.width / 2 - image.size.width / 2, y: frame.size.height / 2 - image.size.height / 2, width: image.size.width, height: image.size.height)
@@ -374,18 +374,23 @@ public class DOFavoriteButton: UIButton {
         if animate {
             CATransaction.begin()
 
-            circleShape.addAnimation(circleTransform, forKey: "transform")
-            circleMask.addAnimation(circleMaskTransform, forKey: "transform")
-            imageShape.addAnimation(imageTransform, forKey: "transform")
-
-            for i in 0 ..< 5 {
-                lines[i].addAnimation(lineStrokeStart, forKey: "strokeStart")
-                lines[i].addAnimation(lineStrokeEnd, forKey: "strokeEnd")
-                lines[i].addAnimation(lineOpacity, forKey: "opacity")
-            }
+            addAnimations()
 
             CATransaction.commit()
         }
+    }
+
+    public func addAnmations() {
+        circleShape.addAnimation(circleTransform, forKey: "transform")
+        circleMask.addAnimation(circleMaskTransform, forKey: "transform")
+        imageShape.addAnimation(imageTransform, forKey: "transform")
+        
+        for i in 0 ..< 5 {
+            lines[i].addAnimation(lineStrokeStart, forKey: "strokeStart")
+            lines[i].addAnimation(lineStrokeEnd, forKey: "strokeEnd")
+            lines[i].addAnimation(lineOpacity, forKey: "opacity")
+        }
+        
     }
 
     public func deselect() {
